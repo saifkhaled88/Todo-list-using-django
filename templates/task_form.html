@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
+    <title>Todo List</title>
+  </head>
+
+  <body>
+
+    {% block content %}
+    <div class="container">
+      <header class="text-center text-light my-4">
+        <h1 class="mb-4">{{request.user}}'s to-do list</h1>
+        <form class="search d-flex" method="GET" action="{% url 'task' %}">
+          <input
+            class="form-control m-auto"
+            type="text"
+            name="q"
+            placeholder="search todos..."
+            value="{{ request.GET.q }}"
+          />
+          <button type="submit" class="btn btn-search">Search</button>
+        </form>
+      </header>
+
+      {% for task in tasks %}
+      <ul class="list-group todos mx-auto text-light delete">
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <span class="task-title">{{ task.title }}</span>
+          <span class="task-status">{{ task.status }}</span>
+          <span class="task-priority">{{ task.priority }}</span>
+          <div class="task-actions">
+            <a href="{% url 'update-task' task.id %}">Edit</a>
+            <a href="{% url 'delete-task' task.id %}">Delete</a>
+          </div>
+        </li>
+      </ul>
+      {% empty %}
+      <li>No tasks available. Add a new task below.</li>
+      {% endfor %}
+      <br>
+      <label class="text-light mt-4">Add a new todo...</label>
+      <form class="add-task-form d-flex" method="POST" action="">
+        {% csrf_token %}
+        <input type="text" name="title" class="task-input" placeholder="Enter task..." />
+        
+        <label class="task-label">Status:</label>
+        <select name="status" class="task-select">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+
+        <label class="task-label">Priority:</label>
+        <select name="priority" class="task-select">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        
+        <button type="submit" class="btn btn-add-task">Add Task</button>
+      </form>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,236 @@
+/* General reset for consistent styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Overall Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2E154F; /* Dark purple background */
+    color: #EAEAEA; /* Light text for contrast */
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Container for All Pages */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #3A1D6E; /* Slightly lighter purple */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Heading Styling */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #FFD700; /* Gold highlight */
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 70%;
+    padding: 1px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #4E2878; /* Subtle purple border */
+    background-color: #4E2878;
+    color: #EAEAEA;
+    font-size: 1rem;
+}
+
+/* Form Buttons */
+button,
+input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFD700; /* Gold button */
+    color: #2E154F; /* Contrast for readability */
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #FFBF00; /* Slightly darker gold on hover */
+}
+
+/* Links */
+a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Alert Messages */
+.messages {
+    background-color: #4E2878; /* Match theme */
+    color: #FFD700; /* Highlight */
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #AA88D1; /* Muted purple for less emphasis */
+}
+
+/* Adjusted Design for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+input[type="text"],
+input[type="text"]:focus {
+  color: #fff;
+  border: none;
+  background: rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+}
+
+.todos li {
+  background: #423a6f;
+  color: #fff;
+}
+
+.delete {
+  cursor: pointer;
+}
+
+.filtered {
+  display: none !important;
+}
+
+.btn:hover {
+  background: #423a6f;
+  color: #fff;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-radius: 13px 13px;
+  transition: 0.8s;
+} 
+
+
+/* Search Form Styling */
+.search {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  padding-top: 40px;
+}
+
+.form-control {
+  flex: 1;
+  max-width: 70%;
+}
+
+.btn-search {
+  background-color: #FFD700;
+  color: #352f5b;
+  padding: 0 15px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Task List Styling */
+.todos .list-group-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.task-title {
+  flex: 1;
+}
+
+.task-status {
+  margin-left: 60px;
+  margin-right: 20px;
+}
+
+.task-priority {
+    margin-left: 45px;
+  margin-right: 60px;
+}
+
+.task-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+}
+
+/* Add Task Form Styling */
+.add-task-form {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.task-input {
+  flex: 1;
+  min-width: 150px;
+  padding: 5px;
+}
+
+.task-label {
+  font-size: 0.9rem;
+  color: #FFD700;
+}
+
+.task-select {
+  padding: 5px;
+  background: #4E2878;
+  color: #EAEAEA;
+  border: 1px solid #4E2878;
+  border-radius: 5px;
+}
+
+.btn-add-task {
+  background-color: #FFD700;
+  color: #352f5b;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.update-btn{
+    width: 178px;
+}
